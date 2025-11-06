@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Subscription Item</label>
+    <pluralLabel>Subscription Items</pluralLabel>
+    <nameField>
+        <label>Subscription Item</label>
+        <type>AutoNumber</type>
+        <displayFormat>SI-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+
+    <!-- Master relationship to Subscription -->
+    <fields>
+        <fullName>Subscription__c</fullName>
+        <label>Subscription</label>
+        <relationshipLabel>Subscription Items</relationshipLabel>
+        <relationshipName>Subscription_Items</relationshipName>
+        <type>MasterDetail</type>
+        <referenceTo>Subscription__c</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+
+    <!-- Product reference -->
+    <fields>
+        <fullName>Product2Id__c</fullName>
+        <label>Product</label>
+        <type>Lookup</type>
+        <referenceTo>Product2</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Quantity / Pricing -->
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <type>Number</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <defaultValue>1</defaultValue>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>UnitPrice__c</fullName>
+        <label>Unit Price</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DiscountType__c</fullName>
+        <label>Discount Type</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>true</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>Amount</fullName>
+                    <default>false</default>
+                    <label>Amount</label>
+                </value>
+                <value>
+                    <fullName>Percent</fullName>
+                    <default>false</default>
+                    <label>Percent</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DiscountValue__c</fullName>
+        <label>Discount Value</label>
+        <type>Number</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CouponCode__c</fullName>
+        <label>Coupon Code</label>
+        <type>Text</type>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Tax / Currency -->
+    <fields>
+        <fullName>TaxMode__c</fullName>
+        <label>Tax Mode</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>TaxIncluded</fullName>
+                    <default>true</default>
+                    <label>Tax Included</label>
+                </value>
+                <value>
+                    <fullName>TaxExcluded</fullName>
+                    <default>false</default>
+                    <label>Tax Excluded</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <!-- Subtotals (denormalized for reporting) -->
+    <fields>
+        <fullName>Subtotal__c</fullName>
+        <label>Subtotal</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TaxAmount__c</fullName>
+        <label>Tax Amount</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <label>Total</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+    </fields>
+
+    <description
+  >Line item for a Subscription. Holds Product/Quantity/Pricing/Discount.</description>
+</CustomObject>

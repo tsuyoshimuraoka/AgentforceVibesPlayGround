@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <label>Subscription State Changed</label>
+    <pluralLabel>Subscription State Changed</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+    <eventType>HighVolume</eventType>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <label>Subscription Id</label>
+        <type>Text</type>
+        <length>18</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>OldStatus__c</fullName>
+        <label>Old Status</label>
+        <type>Text</type>
+        <length>40</length>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>NewStatus__c</fullName>
+        <label>New Status</label>
+        <type>Text</type>
+        <length>40</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Reason__c</fullName>
+        <label>Reason</label>
+        <type>Text</type>
+        <length>100</length>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <label>Account Id</label>
+        <type>Text</type>
+        <length>18</length>
+        <required>false</required>
+    </fields>
+</CustomObject>

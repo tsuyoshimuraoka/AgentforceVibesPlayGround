@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <label>Payment Failed</label>
+    <pluralLabel>Payment Failed</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+    <eventType>HighVolume</eventType>
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <label>Invoice Id</label>
+        <type>Text</type>
+        <length>18</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <label>Account Id</label>
+        <type>Text</type>
+        <length>18</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <label>Amount</label>
+        <type>Number</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>ErrorCode__c</fullName>
+        <label>Error Code</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+    <fields>
+        <fullName>ErrorMessage__c</fullName>
+        <label>Error Message</label>
+        <type>TextArea</type>
+        <length>255</length>
+        <required>false</required>
+    </fields>
+</CustomObject>

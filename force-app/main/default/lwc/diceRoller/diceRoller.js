@@ -36,7 +36,12 @@ export default class DiceRoller extends LightningElement {
   // Initialize component and load user options
   connectedCallback() {
     this.loadUsers();
+    this.ee = new MGCode((msg) => {
+      this.toast(msg.title, msg.message, msg.variant);
+    });
   }
+
+  ee;
 
   // Modifier adjustment methods
   incrementModifier() {
@@ -219,14 +224,6 @@ export default class DiceRoller extends LightningElement {
   buildNotation(count, sides, modifier) {
     const m = Number.isFinite(modifier) ? modifier : 0;
     return `${count}d${sides}${m === 0 ? "" : m > 0 ? `+${m}` : `${m}`}`;
-  }
-
-  ee;
-  connectedCallback() {
-    this.loadUsers();
-    this.ee = new MGCode((msg) => {
-      this.toast(msg.title, msg.message, msg.variant);
-    });
   }
 
   disconnectedCallback() {

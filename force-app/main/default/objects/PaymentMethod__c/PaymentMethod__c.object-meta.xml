@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Payment Method</label>
+    <pluralLabel>Payment Methods</pluralLabel>
+    <nameField>
+        <label>Payment Method</label>
+        <type>AutoNumber</type>
+        <displayFormat>PM-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+
+    <!-- Relationships -->
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <type>Lookup</type>
+        <referenceTo>Account</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Tokenized payment ref (no PAN stored) -->
+    <fields>
+        <fullName>Token__c</fullName>
+        <label>Token</label>
+        <type>Text</type>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <label>Type</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>Card</fullName><default>true</default><label
+          >Card</label></value>
+                <value><fullName>Bank</fullName><default>false</default><label
+          >Bank</label></value>
+                <value><fullName>Wallet</fullName><default>false</default><label
+          >Wallet</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <label>Brand</label>
+        <type>Text</type>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MaskedLast4__c</fullName>
+        <label>Masked Last4</label>
+        <type>Text</type>
+        <length>4</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExpiresOn__c</fullName>
+        <label>Expires On</label>
+        <type>Date</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsDefault__c</fullName>
+        <label>Is Default</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <description
+  >Tokenized payment method reference per Account. No sensitive PAN stored.</description>
+</CustomObject>

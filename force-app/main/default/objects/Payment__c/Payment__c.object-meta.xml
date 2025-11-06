@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Payment</label>
+    <pluralLabel>Payments</pluralLabel>
+    <nameField>
+        <label>Payment</label>
+        <type>AutoNumber</type>
+        <displayFormat>PAY-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+
+    <!-- Relationships -->
+    <fields>
+        <fullName>Invoice__c</fullName>
+        <label>Invoice</label>
+        <type>Lookup</type>
+        <referenceTo>Invoice__c</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <type>Lookup</type>
+        <referenceTo>Account</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Amounts -->
+    <fields>
+        <fullName>Amount__c</fullName>
+        <label>Amount</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+    </fields>
+
+    <!-- Result -->
+    <fields>
+        <fullName>Result__c</fullName>
+        <label>Result</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>Success</fullName><default>true</default><label
+          >Success</label></value>
+                <value><fullName>TemporaryFailure</fullName><default
+          >false</default><label>Temporary Failure</label></value>
+                <value><fullName>PermanentFailure</fullName><default
+          >false</default><label>Permanent Failure</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ErrorCode__c</fullName>
+        <label>Error Code</label>
+        <type>Text</type>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ErrorMessage__c</fullName>
+        <label>Error Message</label>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+        <length>32768</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Attempts__c</fullName>
+        <label>Attempts</label>
+        <type>Number</type>
+        <precision>9</precision>
+        <scale>0</scale>
+        <defaultValue>0</defaultValue>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LastAttemptAt__c</fullName>
+        <label>Last Attempt At</label>
+        <type>DateTime</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <description
+  >Payment outcome for an invoice with gateway response information.</description>
+</CustomObject>

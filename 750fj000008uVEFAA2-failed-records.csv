@@ -1,0 +1,11 @@
+"sf__Id","sf__Error",Name,AccountId,EffectiveDate,Status
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Completed:Status --","Order 1","001000000000001","2023-01-15","Completed"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Processing:Status --","Order 2","001000000000002","2023-02-20","Processing"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Shipped:Status --","Order 3","001000000000003","2023-03-10","Shipped"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Completed:Status --","Order 4","001000000000004","2023-04-05","Completed"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Processing:Status --","Order 5","001000000000005","2023-05-12","Processing"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Shipped:Status --","Order 6","001000000000006","2023-06-18","Shipped"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Completed:Status --","Order 7","001000000000007","2023-07-22","Completed"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Processing:Status --","Order 8","001000000000008","2023-08-30","Processing"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Shipped:Status --","Order 9","001000000000009","2023-09-14","Shipped"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Completed:Status --","Order 10","001000000000010","2023-10-25","Completed"

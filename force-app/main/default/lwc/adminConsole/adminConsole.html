@@ -1,0 +1,40 @@
+<template>
+  <lightning-card
+    title="Subscription Admin Console"
+    icon-name="standard:account"
+  >
+    <div class="slds-m-around_medium">
+      <lightning-input
+        label="Search Subscriptions"
+        type="search"
+        value={searchKey}
+        onchange={handleSearch}
+        class="slds-m-bottom_small"
+      ></lightning-input>
+
+      <lightning-button
+        label="Refresh"
+        onclick={handleRefresh}
+        variant="brand"
+        class="slds-m-bottom_small"
+      ></lightning-button>
+
+      <template if:true={isLoading}>
+        <lightning-spinner
+          alternative-text="Loading..."
+          size="medium"
+        ></lightning-spinner>
+      </template>
+
+      <template if:false={isLoading}>
+        <lightning-datatable
+          data={filteredSubscriptions}
+          columns={columns}
+          onrowaction={handleAction}
+          key-field="Id"
+        >
+        </lightning-datatable>
+      </template>
+    </div>
+  </lightning-card>
+</template>

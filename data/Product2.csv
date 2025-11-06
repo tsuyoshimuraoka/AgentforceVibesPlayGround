@@ -1,0 +1,6 @@
+Name,ProductCode,IsActive,Description
+Premium Subscription Plan,SUB-PREM-001,TRUE,Monthly premium subscription with all features
+Standard Subscription Plan,SUB-STD-001,TRUE,Monthly standard subscription with basic features
+Enterprise Support Package,SUP-ENT-001,TRUE,24/7 enterprise support service
+Professional Services,SVC-PRO-001,TRUE,Professional consulting and implementation services
+Training Package,TRN-PKG-001,TRUE,Comprehensive training for end users

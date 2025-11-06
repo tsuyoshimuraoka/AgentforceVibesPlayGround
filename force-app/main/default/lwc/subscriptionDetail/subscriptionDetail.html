@@ -1,0 +1,59 @@
+<template>
+  <lightning-card title="Subscription Details" icon-name="standard:account">
+    <div class="slds-m-around_medium">
+      <template if:true={isLoading}>
+        <lightning-spinner
+          alternative-text="Loading..."
+          size="medium"
+        ></lightning-spinner>
+      </template>
+
+      <template if:false={isLoading}>
+        <div class="slds-grid slds-gutters">
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-output-field field-name="Name"></lightning-output-field>
+            <lightning-output-field
+              field-name="Account__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="Status__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="StartDate__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="EndDate__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="NextBillDate__c"
+            ></lightning-output-field>
+          </div>
+          <div class="slds-col slds-size_1-of-2">
+            <lightning-output-field
+              field-name="BillingPeriod__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="TaxMode__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="RoundingRule__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="MRR__c"
+            ></lightning-output-field>
+            <lightning-output-field
+              field-name="TotalDiscount__c"
+            ></lightning-output-field>
+          </div>
+        </div>
+
+        <lightning-button
+          label="Refresh"
+          onclick={handleRefresh}
+          variant="brand"
+          class="slds-m-top_small"
+        ></lightning-button>
+      </template>
+    </div>
+  </lightning-card>
+</template>

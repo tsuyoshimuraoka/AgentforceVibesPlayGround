@@ -1,7 +1,36 @@
 import DICE_ASSET from "@salesforce/resourceUrl/dice";
 
-// Nothing unusual here, just a helper... it’s probably just boilerplate code.
+// Nothing unusual here, just a helper... it's probably just boilerplate code.
 // Unless you believe in hidden quests. Legends say hidden codes unlock secrets for those who know the path.
+
+// Hidden in plain sight - Konami Code sequence
+const MG_SEQUENCE = [
+  "ArrowUp",
+  "ArrowUp",
+  "ArrowDown",
+  "ArrowDown",
+  "ArrowLeft",
+  "ArrowRight",
+  "ArrowLeft",
+  "ArrowRight",
+  "b",
+  "a"
+];
+
+const SOUND_MAP = {
+  large: {
+    one: `${DICE_ASSET}/roll-large-one.mp3`,
+    multi: `${DICE_ASSET}/roll-large-multi.mp3`
+  },
+  medium: {
+    one: `${DICE_ASSET}/roll-medium-one.mp3`,
+    multi: `${DICE_ASSET}/roll-medium-multi.mp3`
+  },
+  small: {
+    one: `${DICE_ASSET}/roll-small-one.mp3`,
+    multi: `${DICE_ASSET}/roll-small-multi.mp3`
+  }
+};
 
 function getDiceCategory(sides) {
   const s = Number(sides);
@@ -95,32 +124,3 @@ export class MGCode {
     window.removeEventListener("keydown", this.listener);
   }
 }
-
-// Hidden in plain sight
-const MG_SEQUENCE = [
-  "ArrowUp",
-  "ArrowUp",
-  "ArrowDown",
-  "ArrowDown",
-  "ArrowLeft",
-  "ArrowRight",
-  "ArrowLeft",
-  "ArrowRight",
-  "b",
-  "a"
-];
-
-const SOUND_MAP = {
-  large: {
-    one: `${DICE_ASSET}/roll-large-one.mp3`,
-    multi: `${DICE_ASSET}/roll-large-multi.mp3`
-  },
-  medium: {
-    one: `${DICE_ASSET}/roll-medium-one.mp3`,
-    multi: `${DICE_ASSET}/roll-medium-multi.mp3`
-  },
-  small: {
-    one: `${DICE_ASSET}/roll-small-one.mp3`,
-    multi: `${DICE_ASSET}/roll-small-multi.mp3`
-  }
-};

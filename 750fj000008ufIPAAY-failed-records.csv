@@ -1,0 +1,11 @@
+"sf__Id","sf__Error",Name,AccountId,EffectiveDate,Status
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Approved:Status --","Order 1","001000000000001","2023-01-15","Approved"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Submitted:Status --","Order 2","001000000000002","2023-02-20","Submitted"
+"","INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY:insufficient access rights on cross-reference id: 001000000000003:--","Order 3","001000000000003","2023-03-10","Draft"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Approved:Status --","Order 4","001000000000004","2023-04-05","Approved"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Canceled:Status --","Order 5","001000000000005","2023-05-12","Canceled"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Approved:Status --","Order 6","001000000000006","2023-06-18","Approved"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Submitted:Status --","Order 7","001000000000007","2023-07-22","Submitted"
+"","INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY:insufficient access rights on cross-reference id: 001000000000008:--","Order 8","001000000000008","2023-08-30","Draft"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Approved:Status --","Order 9","001000000000009","2023-09-14","Approved"
+"","INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST:Status: bad value for restricted picklist field: Submitted:Status --","Order 10","001000000000010","2023-10-25","Submitted"

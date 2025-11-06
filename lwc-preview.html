@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LWC Preview - Hello World</title>
+    <style>
+      body {
+        font-family: "Salesforce Sans", Arial, sans-serif;
+        margin: 20px;
+        background-color: #f3f3f3;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .lwc-preview {
+        border: 2px dashed #0176d3;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        background: #f8f9fa;
+      }
+      .code-block {
+        background: #f6f6f6;
+        padding: 15px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        margin: 10px 0;
+        overflow-x: auto;
+      }
+      .preview-note {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 LWC Preview Environment</h1>
+
+      <div class="preview-note">
+        <strong>📝 Note:</strong> This is a mock preview of your LWC components.
+        For actual LWC functionality, deploy to your Salesforce org.
+      </div>
+
+      <h2>Hello World Component Preview</h2>
+      <div class="lwc-preview">
+        <h3>Hello World!</h3>
+        <p>This would be your LWC component content.</p>
+        <button
+          style="
+            background: #0176d3;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          Click Me!
+        </button>
+      </div>
+
+      <h2>Component Code Structure:</h2>
+
+      <h3>HTML Template (helloWorld.html):</h3>
+      <div class="code-block">
+        &lt;template&gt; &lt;lightning-card title="Hello World"
+        icon-name="custom:custom14"&gt; &lt;div class="slds-m-around_medium"&gt;
+        &lt;p&gt;Hello, {greeting}!&lt;/p&gt; &lt;lightning-button
+        variant="brand" label="Click me" title="Click me"
+        onclick={handleClick}&gt; &lt;/lightning-button&gt; &lt;/div&gt;
+        &lt;/lightning-card&gt; &lt;/template&gt;
+      </div>
+
+      <h3>JavaScript Controller (helloWorld.js):</h3>
+      <div class="code-block">
+        import { LightningElement, track } from 'lwc'; export default class
+        HelloWorld extends LightningElement { @track greeting = 'World';
+        handleClick() { this.greeting = this.greeting === 'World' ? 'Lightning
+        Web Components' : 'World'; } }
+      </div>
+
+      <h3>Meta Configuration (helloWorld.js-meta.xml):</h3>
+      <div class="code-block">
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        &lt;LightningComponentBundle
+        xmlns="http://soap.sforce.com/2006/04/metadata"&gt;
+        &lt;apiVersion&gt;64.0&lt;/apiVersion&gt;
+        &lt;isExposed&gt;true&lt;/isExposed&gt; &lt;targets&gt;
+        &lt;target&gt;lightning__AppPage&lt;/target&gt;
+        &lt;target&gt;lightning__RecordPage&lt;/target&gt;
+        &lt;target&gt;lightning__HomePage&lt;/target&gt; &lt;/targets&gt;
+        &lt;/LightningComponentBundle&gt;
+      </div>
+
+      <div class="preview-note">
+        <strong>🔧 How to use this preview:</strong>
+        <ul>
+          <li>1. Right-click on this HTML file in VS Code</li>
+          <li>2. Select "Open with Live Server"</li>
+          <li>3. Edit your LWC files and refresh to see changes</li>
+          <li>4. Deploy to Salesforce org for full functionality</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // Simple JavaScript for interactive preview
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector("button");
+        let greeting = "World";
+
+        if (button) {
+          button.addEventListener("click", function () {
+            greeting =
+              greeting === "World" ? "Lightning Web Components" : "World";
+            const text = document.querySelector(".lwc-preview p");
+            if (text) {
+              text.textContent = `Hello, ${greeting}!`;
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

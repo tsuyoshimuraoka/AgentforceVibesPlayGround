@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Subscription</label>
+    <pluralLabel>Subscriptions</pluralLabel>
+    <nameField>
+        <label>Subscription Name</label>
+        <type>AutoNumber</type>
+        <displayFormat>SUB-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+
+    <!-- Relationships -->
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+        <referenceTo>Account</referenceTo>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id__c</fullName>
+        <label>Pricebook</label>
+        <type>Lookup</type>
+        <referenceTo>Pricebook2</referenceTo>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Status / Lifecycle -->
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Trial</fullName>
+                    <default>false</default>
+                    <label>Trial</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Paused</fullName>
+                    <default>false</default>
+                    <label>Paused</label>
+                </value>
+                <value>
+                    <fullName>PastDue</fullName>
+                    <default>false</default>
+                    <label>Past Due</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <!-- Billing Period -->
+    <fields>
+        <fullName>BillingPeriod__c</fullName>
+        <label>Billing Period</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>true</default>
+                    <label>Monthly</label>
+                </value>
+                <value>
+                    <fullName>Yearly</fullName>
+                    <default>false</default>
+                    <label>Yearly</label>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                    <label>Custom</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <!-- Dates -->
+    <fields>
+        <fullName>StartDate__c</fullName>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>EndDate__c</fullName>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>TrialEndDate__c</fullName>
+        <label>Trial End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NextBillDate__c</fullName>
+        <label>Next Bill Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LastBilledAt__c</fullName>
+        <label>Last Billed At</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+
+    <!-- Pause / Cancel -->
+    <fields>
+        <fullName>IsPaused__c</fullName>
+        <label>Is Paused</label>
+        <defaultValue>false</defaultValue>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PauseReason__c</fullName>
+        <label>Pause Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>CancelDate__c</fullName>
+        <label>Cancel Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CancelReason__c</fullName>
+        <label>Cancel Reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+
+    <!-- Currency / Tax / Rounding -->
+    <fields>
+        <fullName>TaxMode__c</fullName>
+        <label>Tax Mode</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>TaxIncluded</fullName>
+                    <default>true</default>
+                    <label>Tax Included</label>
+                </value>
+                <value>
+                    <fullName>TaxExcluded</fullName>
+                    <default>false</default>
+                    <label>Tax Excluded</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RoundingRule__c</fullName>
+        <label>Rounding Rule</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>HalfUp</fullName>
+                    <default>true</default>
+                    <label>Half Up</label>
+                </value>
+                <value>
+                    <fullName>HalfEven</fullName>
+                    <default>false</default>
+                    <label>Half Even</label>
+                </value>
+                <value>
+                    <fullName>Truncate</fullName>
+                    <default>false</default>
+                    <label>Truncate</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BaseCurrencyIsoCode__c</fullName>
+        <label>Base Currency ISO Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </fields>
+
+    <!-- Aggregates -->
+    <fields>
+        <fullName>MRR__c</fullName>
+        <label>MRR</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>TotalDiscount__c</fullName>
+        <label>Total Discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+
+    <!-- Optimistic lock -->
+    <fields>
+        <fullName>Version__c</fullName>
+        <label>Version</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+    </fields>
+
+    <!-- Description -->
+    <description>Subscription master record for recurring billing.</description>
+</CustomObject>

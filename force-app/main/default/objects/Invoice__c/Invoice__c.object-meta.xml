@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Invoice</label>
+    <pluralLabel>Invoices</pluralLabel>
+    <nameField>
+        <label>Invoice Number</label>
+        <type>AutoNumber</type>
+        <displayFormat>INV-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+
+    <!-- Relationships -->
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <type>Lookup</type>
+        <referenceTo>Account</referenceTo>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Subscription__c</fullName>
+        <label>Subscription</label>
+        <type>Lookup</type>
+        <referenceTo>Subscription__c</referenceTo>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Dates / Status -->
+    <fields>
+        <fullName>InvoiceDate__c</fullName>
+        <label>Invoice Date</label>
+        <type>Date</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>Draft</fullName><default>true</default><label
+          >Draft</label></value>
+                <value><fullName>Posted</fullName><default>false</default><label
+          >Posted</label></value>
+                <value><fullName>Paid</fullName><default>false</default><label
+          >Paid</label></value>
+                <value><fullName>Failed</fullName><default>false</default><label
+          >Failed</label></value>
+                <value><fullName>Void</fullName><default>false</default><label
+          >Void</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <!-- Amounts -->
+    <fields>
+        <fullName>Subtotal__c</fullName>
+        <label>Subtotal</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TaxAmount__c</fullName>
+        <label>Tax Amount</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <label>Total</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode__c</fullName>
+        <label>Currency ISO Code</label>
+        <type>Text</type>
+        <length>3</length>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>TaxMode__c</fullName>
+        <label>Tax Mode</label>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>TaxIncluded</fullName><default
+          >true</default><label>Tax Included</label></value>
+                <value><fullName>TaxExcluded</fullName><default
+          >false</default><label>Tax Excluded</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RoundingRule__c</fullName>
+        <label>Rounding Rule</label>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>HalfUp</fullName><default>true</default><label
+          >Half Up</label></value>
+                <value><fullName>HalfEven</fullName><default
+          >false</default><label>Half Even</label></value>
+                <value><fullName>Truncate</fullName><default
+          >false</default><label>Truncate</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+
+    <description>Invoice record generated from billing job.</description>
+</CustomObject>

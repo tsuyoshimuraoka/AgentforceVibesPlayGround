@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Billing Config</label>
+    <pluralLabel>Billing Configs</pluralLabel>
+    <visibility>Public</visibility>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description
+  >Operational parameters for billing cadence, cutoff and batch controls.</description>
+
+    <fields>
+        <fullName>DailyScheduleHour__c</fullName>
+        <label>Daily Schedule Hour</label>
+        <type>Number</type>
+        <precision>2</precision>
+        <scale>0</scale>
+        <required>true</required>
+        <defaultValue>2</defaultValue>
+        <description
+    >Hour of day (0-23) to run daily billing scheduler</description>
+    </fields>
+    <fields>
+        <fullName>BillingCutoffDay__c</fullName>
+        <label>Billing Cutoff Day</label>
+        <type>Number</type>
+        <precision>2</precision>
+        <scale>0</scale>
+        <required>true</required>
+        <defaultValue>31</defaultValue>
+        <description
+    >Cutoff day for month-end alignment (use 31 to auto-clamp)</description>
+    </fields>
+    <fields>
+        <fullName>BatchSize__c</fullName>
+        <label>Batch Size</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+        <required>true</required>
+        <defaultValue>100</defaultValue>
+    </fields>
+    <fields>
+        <fullName>MaxConcurrency__c</fullName>
+        <label>Max Concurrency</label>
+        <type>Number</type>
+        <precision>2</precision>
+        <scale>0</scale>
+        <required>true</required>
+        <defaultValue>2</defaultValue>
+    </fields>
+    <fields>
+        <fullName>RetryBackoffMinutes__c</fullName>
+        <label>Retry Backoff Minutes</label>
+        <type>Number</type>
+        <precision>3</precision>
+        <scale>0</scale>
+        <required>true</required>
+        <defaultValue>30</defaultValue>
+    </fields>
+</CustomObject>

@@ -1,0 +1,11 @@
+"sf__Id","sf__Error",Id,Name,AccountId,EffectiveDate,Status
+"","INVALID_ID_FIELD:'000000000000001' is not a valid Salesforce ID for the type Order:--","000000000000001","Order 1","001000000000001","2023-01-15","Approved"
+"","INVALID_ID_FIELD:'000000000000002' is not a valid Salesforce ID for the type Order:--","000000000000002","Order 2","001000000000002","2023-02-20","Submitted"
+"","INVALID_ID_FIELD:'000000000000003' is not a valid Salesforce ID for the type Order:--","000000000000003","Order 3","001000000000003","2023-03-10","Draft"
+"","INVALID_ID_FIELD:'000000000000004' is not a valid Salesforce ID for the type Order:--","000000000000004","Order 4","001000000000004","2023-04-05","Approved"
+"","INVALID_ID_FIELD:'000000000000005' is not a valid Salesforce ID for the type Order:--","000000000000005","Order 5","001000000000005","2023-05-12","Canceled"
+"","INVALID_ID_FIELD:'000000000000006' is not a valid Salesforce ID for the type Order:--","000000000000006","Order 6","001000000000006","2023-06-18","Approved"
+"","INVALID_ID_FIELD:'000000000000007' is not a valid Salesforce ID for the type Order:--","000000000000007","Order 7","001000000000007","2023-07-22","Submitted"
+"","INVALID_ID_FIELD:'000000000000008' is not a valid Salesforce ID for the type Order:--","000000000000008","Order 8","001000000000008","2023-08-30","Draft"
+"","INVALID_ID_FIELD:'000000000000009' is not a valid Salesforce ID for the type Order:--","000000000000009","Order 9","001000000000009","2023-09-14","Approved"
+"","INVALID_ID_FIELD:'000000000000010' is not a valid Salesforce ID for the type Order:--","000000000000010","Order 10","001000000000010","2023-10-25","Submitted"

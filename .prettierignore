@@ -9,3 +9,12 @@
 .vscode
 
 coverage/
+
+# Apex files (prettier-plugin-apex has compatibility issues)
+**/*.cls
+**/*.trigger
+**/*.cls-meta.xml
+**/*.trigger-meta.xml
+
+# Salesforce metadata with formula fields (prettier XML plugin issues)
+**/objects/**/fields/*.field-meta.xml

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Billing Schedule</label>
+    <pluralLabel>Billing Schedules</pluralLabel>
+    <nameField>
+        <label>Billing Schedule</label>
+        <type>AutoNumber</type>
+        <displayFormat>BSCH-{000000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+
+    <!-- Relationships -->
+    <fields>
+        <fullName>Subscription__c</fullName>
+        <label>Subscription</label>
+        <type>Lookup</type>
+        <referenceTo>Subscription__c</referenceTo>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+
+    <!-- Execution control -->
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value><fullName>Active</fullName><default>true</default><label
+          >Active</label></value>
+                <value><fullName>Paused</fullName><default>false</default><label
+          >Paused</label></value>
+                <value><fullName>Completed</fullName><default
+          >false</default><label>Completed</label></value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LastRunAt__c</fullName>
+        <label>Last Run At</label>
+        <type>DateTime</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>NextRunAt__c</fullName>
+        <label>Next Run At</label>
+        <type>DateTime</type>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BatchSize__c</fullName>
+        <label>Batch Size Override</label>
+        <type>Number</type>
+        <precision>9</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+    </fields>
+
+    <description
+  >Controls periodic billing execution windows per subscription or globally.</description>
+</CustomObject>
